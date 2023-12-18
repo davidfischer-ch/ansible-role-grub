@@ -1,8 +1,10 @@
 ---
 
 - name: update grub
-  command:
+  ansible.builtin.command:
     update-grub
-  become: yes
+  become: true
   failed_when: "'error' in grub_update.stderr"
   register: grub_update
+
+...
